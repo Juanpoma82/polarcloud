@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolarCloud - Frazadas Polares</title>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('logofondo.jpg'); /* Imagen de fondo */
+      background-size: cover; /* Cubre toda la pantalla */
+      background-position: center; /* Centra la imagen */
+      background-attachment: fixed; /* Fija la imagen al desplazarse */
+      color: #333;
+    }
+    header {
+      background-color: rgba(222, 253, 251, 0.5); /* Fondo semitransparente */
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative; /* Para posicionar el logo */
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem; /* Tamaño de fuente más pequeño para móviles */
+      color: #2c3e50;
+      position: relative; /* Para que el texto esté sobre el logo */
+      z-index: 2; /* Asegura que el texto esté sobre la imagen */
+    }
+    header p {
+      font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+      color: #010847;
+      position: relative; /* Para que el texto esté sobre el logo */
+      z-index: 2; /* Asegura que el texto esté sobre la imagen */
+    }
+    .logo-background {
+      position: absolute; /* Posiciona el logo detrás del texto */
+      top: 50%; /* Centra verticalmente */
+      left: 50%; /* Centra horizontalmente */
+      transform: translate(-50%, -50%); /* Ajusta el centrado */
+      opacity: 0.2; /* Hace el logo semi-transparente */
+      z-index: 1; /* Coloca el logo detrás del texto */
+      width: 400px; /* Tamaño del logo */
+      height: 130px; /* Mantiene la proporción */
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(172, 247, 243, 0.5); /* Fondo semitransparente */
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas más pequeñas para móviles */
+      gap: 15px; /* Espaciado reducido */
+    }
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px; /* Altura reducida para móviles */
+      object-fit: cover;
+    }
+    .product-card h3 {
+      margin: 10px;
+      font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+      color: #2c3e50;
+    }
+    .product-card p {
+      margin: 0 10px 10px;
+      font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+      color: #7f8c8d;
+    }
+    .whatsapp-button {
+      display: block;
+      margin: 10px;
+      padding: 8px 16px; /* Botón más pequeño */
+      background-color: #25d366;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    }
+    .whatsapp-button:hover {
+      background-color: #128c7e;
+    }
+    .music-control {
+      position: fixed;
+      bottom: 10px; /* Posición ajustada para móviles */
+      right: 10px; /* Posición ajustada para móviles */
+      background-color: #2c3e50;
+      color: #ffffff;
+      padding: 8px 16px; /* Botón más pequeño */
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    }
+    footer {
+      background-color: rgba(44, 62, 80, 0.8); /* Fondo semitransparente */
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px; /* Espaciado reducido */
+      font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    }
+
+    /* Estilos específicos para móviles */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem; /* Tamaño de fuente más pequeño para móviles */
+      }
+      header p {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño para móviles */
+      }
+      .logo-background {
+        width: 100px; /* Tamaño más pequeño para móviles */
+      }
+      .product-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+      }
+      .product-card img {
+        height: 120px; /* Altura reducida para móviles */
+      }
+      .whatsapp-button {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño */
+      }
+      .music-control {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño */
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <img src="logofondo.jpg" alt="Logo PolarCloud" class="logo-background" width="1000">
+    <h1>PolarCloud</h1>
+    <p>Descansa en la nube de confort</p>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <h2>Nuestra Colección</h2>
+    <div class="product-grid">
+      <!-- Producto 1 -->
+      <div class="product-card">
+        <img src="frazadaentero.jpg" alt="Frazada color entero">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 2 -->
+      <div class="product-card">
+        <img src="goldsonchiporro.jpg" alt="colcha goldson">
+        <h3>Frazada Gris</h3>
+        <p>Diseño moderno y elegante para tu hogar.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 3 -->
+      <div class="product-card">
+        <img src="pelolargo.jpg" alt="colcha pelo largo">
+        <h3>Frazada Beige</h3>
+        <p>Tonos neutros que combinan con cualquier decoración.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 4 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazadatigre 2 y 1.5 plazas">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 5 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 6 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 7 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 8 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 9 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 10 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+      <!-- Producto 11 -->
+      <div class="product-card">
+        <img src="tigre.jpg" alt="Frazada Polar Azul">
+        <h3>Frazada Azul</h3>
+        <p>Suave y abrigada, perfecta para el invierno.</p>
+        <a href="https://api.whatsapp.com/send/?phone=72869599&text&type=phone_number&app_absent=0&wame_ctl=1" class="whatsapp-button">Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Control de música -->
+  <div class="music-control" onclick="toggleMusic()">
+    Activar música de fondo
+  </div>
+
+  <!-- Reproductor de audio -->
+  <audio id="backgroundMusic" loop>
+    <source src="caramelo.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 PolarCloud. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script para controlar la música -->
+  <script>
+    function toggleMusic() {
+      var audio = document.getElementById("backgroundMusic");
+      var button = document.querySelector(".music-control");
+      if (audio.paused) {
+        audio.play();
+        button.textContent = "Desactivar música de fondo";
+      } else {
+        audio.pause();
+        button.textContent = "Activar música de fondo";
+      }
+    }
+  </script>
+</body>
+</html>
